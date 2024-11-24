@@ -1,14 +1,8 @@
 import { createStore } from 'vuex'
+import { studentA } from './student.js'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
-  }
+    student:studentA
+  },
 })

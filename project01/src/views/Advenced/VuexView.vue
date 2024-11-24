@@ -48,7 +48,6 @@ export default{
        
     },
     computed:{//vuex에서 불러오는 데이터나 메서드는 컴퓨티드에서 호출해주는게 좋음.
-        
         todos(){
             return this.$store.state.todo.todos //vuex에서 데이터 호출. store폴더에 있는 index.js 에 있는 state에 있는 todos 호출
         },

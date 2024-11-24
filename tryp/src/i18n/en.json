@@ -1,0 +1,6 @@
+{
+    "hello" : "hello",
+    "cheese" : "cheese",
+    "milk" : "milk",
+    "good" : "good {name}"
+}

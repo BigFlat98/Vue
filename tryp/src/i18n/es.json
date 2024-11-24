@@ -1,0 +1,6 @@
+{
+    "hello" : "hola",
+    "cheese" : "queso",
+    "milk" : "leche",
+    "good" : "bien {name}"
+}
