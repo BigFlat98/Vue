@@ -7,6 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
+    "@fullcalendar/vue3": "^6.1.15",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "core-js": "^3.8.3",
@@ -14,6 +19,7 @@
     "vue-cookies": "^1.8.4",
     "vue-i18n": "^9.14.1",
     "vue-router": "^4.0.3",
+    "vue3-kakao-maps": "^2.3.10",
     "vuex": "^4.0.0",
     "vuex-persistedstate": "^4.1.0"
   },

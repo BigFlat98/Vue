@@ -162,10 +162,21 @@ const routes = [ //이 라우터는 장고에서 urls랑 같은 기능을 함.
     component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/Advenced/VuexView.vue')
   },
   {
-    path: '/auth',
-    name: 'auth',
-    component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/ApiConnect/LoginView.vue')
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/KakaoLoginView.vue')
   },
+  {
+    path: '/map',
+    name: 'map',
+    component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/KakaoMapView.vue')
+  },
+  {
+    path: '/calendar',
+    name: 'calendar',
+    component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/CalendarView.vue')
+  },
+
 
 
 ]
