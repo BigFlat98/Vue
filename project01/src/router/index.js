@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router' 
 import HomeView from '../views/HomeView.vue'
+import KakaoLogin from "@/views/KakaoLoginView.vue";
 
 const routes = [ //이 라우터는 장고에서 urls랑 같은 기능을 함.
   {
@@ -162,9 +163,12 @@ const routes = [ //이 라우터는 장고에서 urls랑 같은 기능을 함.
     component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/Advenced/VuexView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/KakaoLoginView.vue')
+    // path: '/login',
+    // name: 'login',
+    // component: () => import(/* webpackChunkName: "Directive" , webpackPrefetch:true*/ '@/views/KakaoLoginView.vue')
+    path: "/login",
+    name: "KakaoLogin",
+    component: KakaoLogin,
   },
   {
     path: '/map',

@@ -82,6 +82,7 @@
 
 
   <script>
+  
   import { getKakaoToken, getKakaoUserInfo } from "../api/kakao";
   import { mapActions, mapGetters } from "vuex";
   
@@ -91,14 +92,22 @@
     },
     created() {
       // 카카오 SDK 초기화
-      if (!window.Kakao.isInitialized()) {
+      if (typeof window.Kakao !== "undefined" && !window.Kakao.isInitialized()) {
+        console.log("카카오 SDK 초기화");
         window.Kakao.init("21f61054eb166ba3ce01060f97fa5909"); // 카카오 JavaScript 키
+      }
+      else{
+        console.log("카카오 SDK 이미 초기화됨");
+        console.log(window.Kakao);
       }
   
       // URL에서 인가 코드 추출
       const urlParams = new URLSearchParams(window.location.search);
+      console.log(urlParams);
       if (urlParams.has("code")) {
+        console.log("인가 코드 추출");
         const code = urlParams.get("code");
+        console.log(code);
         this.setKakaoToken(code);
       }
     },
@@ -106,13 +115,16 @@
       ...mapActions(["setUser", "clearUser"]), // Vuex 액션 매핑
   
       kakaoLogin() {
+        console.log("kakaoLogin");
         window.Kakao.Auth.authorize({
           redirectUri: "http://localhost:8080/login", // Redirect URI
         });
       },
       async setKakaoToken(code) {
         try {
-          const { data } = await getKakaoToken(code);
+          console.log("setKakaoToken");
+          const { data } = await getKakaoToken(code); //지금 여기가 문제인 것 같은데...
+          console.log("setKakaoToken...2");
           window.Kakao.Auth.setAccessToken(data.access_token);
   
           const userInfo = await this.setUserInfo();

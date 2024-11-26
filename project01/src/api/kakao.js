@@ -31,6 +31,7 @@ import axios from "axios";
 
 // 카카오 토큰 발급
 export const getKakaoToken = async (code) => {
+  console.log("getKakaoToken");
   const data = {
     grant_type: "authorization_code",
     client_id: "39769ba2832c9d4374af7614b1192564", // 카카오 REST API 키
@@ -38,15 +39,23 @@ export const getKakaoToken = async (code) => {
     code: code,
   };
 
-  const queryString = Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
+  console.log("data :", data);
+  const queryString = Object.keys(data).map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])).join("&");
+  console.log("queryString :", queryString);
+  axios.defaults.baseURL = 'http://localhost:8080';
+  console.log('요청 URL:', axios.defaults.baseURL);
+  
+  return axios.post(
+    "https://kauth.kakao.com/oauth/token", 
+    queryString, 
+    { headers: {"Content-type": "application/x-www-form-urlencoded;charset=utf-8",},}
+  );
 
-  return axios.post("https://kauth.kakao.com/oauth/token", queryString, {
-    headers: {
-      "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
-    },
-  });
+  // return axios.post("/oauth/token", queryString, {
+  //   headers: {
+  //     "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
+  //   },
+  // });
 };
 
 // 카카오 사용자 정보 조회

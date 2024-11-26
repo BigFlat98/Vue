@@ -6,6 +6,9 @@ export default createStore({
   state: {
     user: {}, // 사용자 정보 저장
   },
+  getters: {
+    user: (state) => state.user,
+  },
   mutations: {
     setUser(state, userInfo) {
       state.user = userInfo;
@@ -21,9 +24,6 @@ export default createStore({
     clearUser({ commit }) {
       commit("clearUser");
     },
-  },
-  getters: {
-    user: (state) => state.user,
   },
   modules: { //데이터 정의는 다른 파일에서 하고, index.js modulse(여기)에서 데이터들을 구분해서 사용.
     todo : todo ,
