@@ -18,11 +18,14 @@ const routes = [
   {
     path: '/reuse',
     name: 'reuse',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "reuse" webpackPrefetch:true */ '../views/HowToUseComp/highLayerCompoView.vue')
-  }
+  },
+  {
+    path: '/api',
+    name: 'api',
+    component: () => import(/* webpackChunkName: "api" webpackPrefetch:true */ '../views/HowToUseApi/MapLoginCalendarView.vue')
+  },
+
 ]
 
 const router = createRouter({
