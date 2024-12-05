@@ -25,6 +25,11 @@ const routes = [
     name: 'api',
     component: () => import(/* webpackChunkName: "api" webpackPrefetch:true */ '../views/HowToUseApi/MapLoginCalendarView.vue')
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "api" webpackPrefetch:true */ '../views/HowToUseApi/MapLoginCalendarView.vue')
+  },
 
 ]
 
