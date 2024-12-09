@@ -149,11 +149,11 @@
         }
       },
       kakaoLogout() {
-            window.Kakao.Auth.logout(() => {
-                console.log("로그아웃 성공");
-                this.clearUser(); // Vuex 상태 초기화
-            });
-        },
+        window.Kakao.Auth.logout(() => {
+            console.log("로그아웃 성공");
+            this.clearUser(); // Vuex 상태 초기화
+        });
+      },
     },
   };
   </script>
